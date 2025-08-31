@@ -1,0 +1,1075 @@
+
+/* ==================== */
+/* ESTILOS DEL HEADER */
+/* ==================== */
+
+/* Contenedor principal del header */
+.header {
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; /* Fondo negro */
+    z-index: 1000; /* Por encima de todo */
+    transition: background-color 0.4s; /* Transición suave */
+}
+
+/* Header transparente al hacer scroll */
+.header.header-transparent {
+    background-color: rgba(87, 85, 85, 0.9); /* Negro con transparencia */
+}
+
+/* Contenedor de navegación */
+.nav {
+    height: 80px; /* Altura fija */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem; /* Espaciado lateral */
+}
+
+/* Logo */
+.nav__logo {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav__logo i {
+    font-size: 1.8rem;
+}
+
+/* Lista de menú */
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 2rem; /* Espacio entre items */
+}
+
+/* Items del menú */
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+/* Efecto hover en links */
+.nav__link:hover {
+    color: #FFD700; /* Dorado al hover */
+}
+
+/* Subrayado animado */
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FFD700;
+    transition: width 0.3s;
+}
+
+.nav__link:hover::after {
+    width: 100%;
+}
+
+/* Botones toggle y close (ocultos en desktop) */
+.nav__toggle, .nav__close {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* ==================== */
+/* MEDIA QUERIES - MOBILE */
+/* ==================== */
+
+@media screen and (max-width: 768px) {
+    /* Mostrar botones de toggle y close */
+    .nav__toggle, .nav__close {
+        display: block;
+    }
+    
+    /* Ocultar menú por defecto en móviles */
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Oculta el menú fuera de pantalla */
+        width: 70%;
+        height: 100%;
+        background-color: #000;
+        padding: 6rem 2rem 0;
+        transition: right 0.4s;
+        z-index: 1000;
+    }
+    
+    /* Mostrar menú cuando está activo */
+    .nav__menu.show-menu {
+        right: 0;
+    }
+    
+    /* Posición del botón cerrar */
+    .nav__close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+    
+    /* Menú en columna para móviles */
+    .nav__list {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    
+    /* Tamaño de fuente en móviles */
+    .nav__link {
+        font-size: 1.1rem;
+    }
+}
+
+/* Dispositivos muy pequeños */
+@media screen and (max-width: 350px) {
+    .nav__menu {
+        width: 100%;
+    }
+}
+
+
+
+
+
+/* ==================== */
+/* ESTILOS  contenedor de carrusel GENERALES */
+/* ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==================== */
+/* SECCIÓN HERO - CONTENEDOR PRINCIPAL */
+/* ==================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla */
+    overflow: hidden;
+    margin-top: 80px; /* Compensa el header */
+}
+
+/* ==================== */
+/* CARRUSEL - CONTENEDOR DE IMÁGENES */
+/* ==================== */
+.carrusel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==================== */
+/* SLIDES INDIVIDUALES */
+/* ==================== */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: carrusel-animacion 15s infinite;
+}
+
+/* ==================== */
+/* IMÁGENES - OCUPAN EL 100% */
+/* ==================== */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre todo el espacio sin distorsionar */
+    display: block;
+}
+
+/* ==================== */
+/* ANIMACIÓN DEL CARRUSEL */
+/* ==================== */
+.slide-1 { animation-delay: 0s; }
+.slide-2 { animation-delay: 5s; }
+.slide-3 { animation-delay: 10s; }
+
+@keyframes carrusel-animacion {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    30% { opacity: 1; }
+    35% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* ==================== */
+/* OVERLAY PARA CONTRASTE */
+/* ==================== */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* ==================== */
+/* CONTENIDO DE TEXTO */
+/* ==================== */
+.hero-contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 90%;
+    max-width: 800px;
+}
+
+.hero-titulo {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.hero-subtitulo {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    animation: slideInFromRight 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.hero-boton {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #FFD700, #FFC000);
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.hero-boton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+/* ==================== */
+/* ANIMACIONES DE TEXTO */
+/* ==================== */
+@keyframes slideInFromLeft {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+
+
+
+
+
+
+/* ==================== */
+/* SECCIÓN QUIÉNES SOMOS - CORREGIDO */
+/* ==================== */
+
+.quienes-somos {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.container-qsomos {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título especial SIN borde dorado */
+.titulo-especial {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Contenedor principal */
+.contenido-qsomos {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Imagen SIN borde dorado */
+.imagen-container {
+    flex: 1;
+    animation: aparecerDesdeIzquierda 1.5s ease-out;
+}
+
+.imagen-aparece {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    /* BORRADO: border: 3px solid #FFD700; */
+}
+
+/* Contenedor de texto */
+.texto-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Items de texto - SOLO ESTOS tienen borde dorado */
+.item-texto {
+    padding: 20px;
+    border-left: 4px solid #FFD700; /* ✅ BORDE DORADO SOLO AQUÍ */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: aparecerDesdeDerecha 1s ease-out;
+}
+
+.item-texto:nth-child(1) { animation-delay: 0.3s; }
+.item-texto:nth-child(2) { animation-delay: 0.6s; }
+.item-texto:nth-child(3) { animation-delay: 0.9s; }
+
+/* Títulos con estilo elegante SIN fondo dorado */
+.titulo-item {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    /* BORRADO: background y border dorado */
+}
+
+.descripcion-item {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Animaciones de entrada */
+@keyframes aparecerDesdeIzquierda {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aparecerDesdeDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efectos hover SOLO en items de texto */
+.item-texto:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    border-left: 4px solid #FFC107; /* Borde más intenso al hover */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contenido-qsomos {
+        flex-direction: column;
+    }
+    
+    .imagen-aparece {
+        height: 300px;
+    }
+    
+    .titulo-especial {
+        font-size: 2rem;
+    }
+    
+    .item-texto {
+        padding: 15px;
+    }
+    
+    .titulo-item {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+
+/* ==================== */
+/* ANIMACIÓN INFINITA TÍTULO que venga de izquierda a centro  */
+/* ==================== */
+
+.titulo-especial {
+    animation: moverIzquierdaCentro 3s ease-in-out infinite;
+}
+
+@keyframes moverIzquierdaCentro {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+/* ==================== */
+/* SECCIÓN SERVICIOS */
+/* ==================== */
+
+.servicios {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.container-servicios {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Títulos de sección */
+.titulo-seccion {
+    font-family: 'Georgia', serif;
+    font-size: 2.8rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: aparecerDesdeArriba 1s ease-out;
+}
+
+.subtitulo-seccion {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 60px;
+    animation: aparecerDesdeArriba 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/* Grid de tarjetas */
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Tarjeta individual */
+.tarjeta-servicio {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    animation: aparecerDesdeAbajo 0.8s ease-out;
+    position: relative;
+}
+
+/* Efecto hover en tarjeta */
+.tarjeta-servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Contenedor de imagen */
+.tarjeta-imagen {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.imagen-servicio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto zoom en imagen al hover */
+.tarjeta-servicio:hover .imagen-servicio {
+    transform: scale(1.1);
+}
+
+/* Overlay para imagen */
+.tarjeta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,215,0,0.8), rgba(255,193,0,0.6));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tarjeta-servicio:hover .tarjeta-overlay {
+    opacity: 1;
+}
+
+/* Contenido de tarjeta */
+.tarjeta-contenido {
+    padding: 25px;
+}
+
+.tarjeta-titulo {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.tarjeta-descripcion {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Botón de tarjeta */
+.tarjeta-boton {
+    background: linear-gradient(135deg, #FFD700, #FFC000);
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.tarjeta-boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+
+/* Animaciones de aparición escalonada */
+.tarjeta-servicio:nth-child(1) { animation-delay: 0.1s; }
+.tarjeta-servicio:nth-child(2) { animation-delay: 0.2s; }
+.tarjeta-servicio:nth-child(3) { animation-delay: 0.3s; }
+.tarjeta-servicio:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes aparecerDesdeAbajo {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== */
+/* RESPONSIVE */
+/* ==================== */
+
+@media (max-width: 768px) {
+    .grid-servicios {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .titulo-seccion {
+        font-size: 2.2rem;
+    }
+    
+    .tarjeta-contenido {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicios {
+        padding: 60px 15px;
+    }
+    
+    .titulo-seccion {
+        font-size: 2rem;
+    }
+    
+    .tarjeta-titulo {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* SECCIÓN CONTACTO */
+/* ==================== */
+/* SECCIÓN CONTACTO */
+/* ==================== */
+
+.contacto {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.container-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Título con animación */
+.titulo-contacto {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: latidoSuave 2s ease-in-out infinite;
+}
+
+@keyframes latidoSuave {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Formulario */
+.formulario-contacto {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.campo-formulario {
+    margin-bottom: 25px;
+}
+
+.label-formulario {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.input-formulario,
+.textarea-formulario {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-formulario:focus,
+.textarea-formulario:focus {
+    outline: none;
+    border-color: #FFD700;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.input-formulario::placeholder,
+.textarea-formulario::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.textarea-formulario {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Botón de enviar */
+.boton-enviar {
+    background: linear-gradient(135deg, #FFD700, #FFC000);
+    color: #000;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+/* Mensajes de error y éxito */
+.mensaje-error {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+    min-height: 20px;
+}
+
+.mensaje-exito {
+    background: rgba(46, 204, 113, 0.9);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    animation: aparecer 0.5s ease-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Validación visual */
+.input-formulario.error,
+.textarea-formulario.error {
+    border-color: #ff6b6b;
+}
+
+.input-formulario.valido,
+.textarea-formulario.valido {
+    border-color: #2ecc71;
+}
+
+/* ==================== */
+/* RESPONSIVE - MEDIA QUERIES */
+/* ==================== */
+
+@media (max-width: 768px) {
+    .contacto {
+        padding: 60px 15px;
+    }
+    
+    .titulo-contacto {
+        font-size: 2rem;
+    }
+    
+    .formulario-contacto {
+        padding: 30px 20px;
+    }
+    
+    .input-formulario,
+    .textarea-formulario {
+        padding: 12px;
+    }
+    
+    .boton-enviar {
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-contacto {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .formulario-contacto {
+        padding: 20px 15px;
+    }
+    
+    .boton-enviar {
+        padding: 14px 20px;
+    }
+}
+
+/* Animaciones para el título */
+@keyframes latidoSuave {
+    0%, 100% { 
+        transform: scale(1); 
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    50% { 
+        transform: scale(1.05); 
+        text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    }
+}
+
+
+
+
+
+
+/* ==================== */
+/* FOOTER DINÁMICO */
+/* ==================== */
+
+.footer {
+    background: linear-gradient(135deg, #050505 0%, #0a0a0a 100%);
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: 0;
+}
+
+.container-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+/* Columnas del footer */
+.footer-columna {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-logo i {
+    font-size: 2rem;
+    color: #FFD700;
+}
+
+.footer-descripcion {
+    line-height: 1.6;
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+
+/* Títulos */
+.footer-titulo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #FFD700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #FFD700;
+}
+
+/* Lista de enlaces */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-link {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-link:hover {
+    color: #FFD700;
+    transform: translateX(5px);
+}
+
+/* Redes Sociales */
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Colores específicos para redes */
+.facebook:hover { background: #3b5998; }
+.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.linkedin:hover { background: #0077b5; }
+.whatsapp:hover { background: #25D366; }
+
+/* Información de contacto */
+.footer-contacto {
+    margin-top: 15px;
+}
+
+.footer-contacto p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #bdc3c7;
+}
+
+.footer-contacto i {
+    color: #FFD700;
+    font-size: 1.1rem;
+}
+
+/* Copyright */
+.footer-copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #95a5a6;
+    font-size: 0.9rem;
+}
+
+/* ==================== */
+/* ANIMACIONES */
+/* ==================== */
+
+.footer {
+    animation: aparecerFooter 1s ease-out;
+}
+
+@keyframes aparecerFooter {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== */
+/* RESPONSIVE */
+/* ==================== */
+
+@media (max-width: 768px) {
+    .container-footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-titulo::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-contacto p {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-logo {
+        font-size: 1.3rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
+
+
+
+/* Importar sección footer */
+@import url('secciones/footer.css');

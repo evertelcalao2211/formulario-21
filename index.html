@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>Estudio Jurídico Vertel</title>
+    <!-- Fuente de íconos -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./stilo.css/estilo.css">
+</head>
+
+<body>
+
+
+
+    <!-- ==================== -->
+    <!-- SECCIÓN 1: HEADER -->
+    <!-- ==================== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- Logo -->
+            <a href="#" class="nav__logo">
+                <i class="ri-scales-3-line"></i> Estudio Vertel
+            </a>
+
+            <!-- Menú de navegación -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#inicio" class="nav__link">Inicio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#quienes-somos" class="nav__link">Quiénes Somos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#servicios" class="nav__link">Servicios</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contacto" class="nav__link">Contacto</a>
+                    </li>
+                </ul>
+
+                <!-- Botón cerrar menú (mobile) -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <!-- Botón menú hamburguesa (mobile) -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Resto de las secciones... -->
+
+
+
+
+
+   <!-- ==================== -->
+<!-- SECCIÓN HERO CON CARRUSEL -->
+<!-- ==================== -->
+<section id="inicio" class="hero">
+    <!-- Carrusel 100% CSS -->
+    <div class="carrusel">
+        <div class="slide slide-1">
+            <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=1200&h=800&fit=crop" alt="Oficina legal">
+        </div>
+        <div class="slide slide-2">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&h=800&fit=crop" alt="Abogados reunión">
+        </div>
+        <div class="slide slide-3">
+            <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=1200&h=800&fit=crop" alt="Documentos legales">
+        </div>
+    </div>
+    
+    <!-- Overlay para contraste -->
+    <div class="overlay"></div>
+    
+    <!-- Contenido de texto -->
+    <div class="hero-contenido">
+        <h1 class="hero-titulo">Contratos Civiles Y Mercantiles</h1>
+        <p class="hero-subtitulo">Texto descriptivo aquí</p>
+        <a href="#contacto" class="hero-boton">Consulta Gratuita</a>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- ==================== -->
+<!-- SECCIÓN QUIÉNES SOMOS -->
+<!-- ==================== -->
+<section id="quienes-somos" class="quienes-somos">
+    <div class="container-qsomos">
+        
+        <!-- Titulo especial -->
+        <h2 class="titulo-especial">shemhamphorash</h2>
+        
+        <!-- Contenido principal -->
+        <div class="contenido-qsomos">
+            
+            <!-- Imagen -->
+            <div class="imagen-container">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=400&fit=crop" 
+                     alt="Equipo de abogados" 
+                     class="imagen-aparece">
+            </div>
+            
+            <!-- Texto contenido -->
+            <div class="texto-container">
+                <!-- Misión -->
+                <div class="item-texto">
+                    <h3 class="titulo-item">Misión</h3>
+                    <p class="descripcion-item">Proporcionar excelencia legal con integridad y compromiso.</p>
+                </div>
+                
+                <!-- Visión -->
+                <div class="item-texto">
+                    <h3 class="titulo-item">Visión</h3>
+                    <p class="descripcion-item">Ser referentes en el sector legal, reconocidos por nuestra innovación.</p>
+                </div>
+                
+                <!-- Quiénes Somos -->
+                <div class="item-texto">
+                    <h3 class="titulo-item">Quiénes Somos</h3>
+                    <p class="descripcion-item">Un equipo de abogados especializados comprometidos con la justicia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- ==================== -->
+<!-- SECCIÓN SERVICIOS -->
+<!-- ==================== -->
+<section id="servicios" class="servicios">
+    <div class="container-servicios">
+        <h2 class="titulo-seccion">Nuestros Servicios Legales</h2>
+        <p class="subtitulo-seccion">Expertos en las principales áreas del derecho</p>
+        
+        <div class="grid-servicios">
+            <!-- Tarjeta 1: Derecho de Familia -->
+            <article class="tarjeta-servicio" data-categoria="familia">
+                <div class="tarjeta-imagen">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=300&fit=crop" 
+                         alt="Derecho de Familia" 
+                         class="imagen-servicio">
+                    <div class="tarjeta-overlay"></div>
+                </div>
+                <div class="tarjeta-contenido">
+                    <h3 class="tarjeta-titulo">Derecho de Familia</h3>
+                    <p class="tarjeta-descripcion">Divorcios, custodia, alimentos, uniones maritales y procesos de familia.</p>
+                    <button class="tarjeta-boton">Más Información</button>
+                </div>
+            </article>
+
+            <!-- Tarjeta 2: Derecho Penal -->
+            <article class="tarjeta-servicio" data-categoria="penal">
+                <div class="tarjeta-imagen">
+                    <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=400&h=300&fit=crop" 
+                         alt="Derecho Penal" 
+                         class="imagen-servicio">
+                    <div class="tarjeta-overlay"></div>
+                </div>
+                <div class="tarjeta-contenido">
+                    <h3 class="tarjeta-titulo">Derecho Penal</h3>
+                    <p class="tarjeta-descripcion">Defensa penal, recursos, incidentes, libertyades y procesos penales.</p>
+                    <button class="tarjeta-boton">Más Información</button>
+                </div>
+            </article>
+
+            <!-- Tarjeta 3: Derecho Laboral -->
+            <article class="tarjeta-servicio" data-categoria="laboral">
+                <div class="tarjeta-imagen">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop" 
+                         alt="Derecho Laboral" 
+                         class="imagen-servicio">
+                    <div class="tarjeta-overlay"></div>
+                </div>
+                <div class="tarjeta-contenido">
+                    <h3 class="tarjeta-titulo">Derecho Laboral</h3>
+                    <p class="tarjeta-descripcion">Despidos, accidentes de trabajo, liquidaciones y derecho laboral.</p>
+                    <button class="tarjeta-boton">Más Información</button>
+                </div>
+            </article>
+
+            <!-- Tarjeta 4: Derecho Civil -->
+            <article class="tarjeta-servicio" data-categoria="civil">
+                <div class="tarjeta-imagen">
+                    <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=300&fit=crop" 
+                         alt="Derecho Civil" 
+                         class="imagen-servicio">
+                    <div class="tarjeta-overlay"></div>
+                </div>
+                <div class="tarjeta-contenido">
+                    <h3 class="tarjeta-titulo">Derecho Civil</h3>
+                    <p class="tarjeta-descripcion">Contratos, responsabilidad civil, propiedad y derechos reales.</p>
+                    <button class="tarjeta-boton">Más Información</button>
+                </div>
+            </article>
+
+            <!-- Tarjeta 4: Derecho Civil -->
+            <article class="tarjeta-servicio" data-categoria="civil">
+                <div class="tarjeta-imagen">
+                    <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=300&fit=crop" 
+                         alt="Derecho Civil" 
+                         class="imagen-servicio">
+                    <div class="tarjeta-overlay"></div>
+                </div>
+                <div class="tarjeta-contenido">
+                    <h3 class="tarjeta-titulo">Derecho Civil</h3>
+                    <p class="tarjeta-descripcion">Contratos, responsabilidad civil, propiedad y derechos reales.</p>
+                    <button class="tarjeta-boton">Más Información</button>
+                </div>
+            </article>
+
+            <!-- Tarjeta 4: Derecho Civil -->
+            <article class="tarjeta-servicio" data-categoria="civil">
+                <div class="tarjeta-imagen">
+                    <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=300&fit=crop" 
+                         alt="Derecho Civil" 
+                         class="imagen-servicio">
+                    <div class="tarjeta-overlay"></div>
+                </div>
+                <div class="tarjeta-contenido">
+                    <h3 class="tarjeta-titulo">Derecho Civil</h3>
+                    <p class="tarjeta-descripcion">Contratos, responsabilidad civil, propiedad y derechos reales.</p>
+                    <button class="tarjeta-boton">Más Información</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- ==================== -->
+<!-- SECCIÓN CONTACTO -->
+<!-- ==================== -->
+ <section id="contacto" class="contacto">
+    <div class="container-contacto">
+        <h2 class="titulo-contacto animacion-titulo">Déjanos tus datos nosotros te contactamos</h2>
+        
+        <form action="https://formspree.io/f/mzzaepby" method="POST" class="formulario-contacto">
+            
+            <div class="campo-formulario">
+                <label for="nombre" class="label-formulario">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" class="input-formulario" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="email" class="label-formulario">Correo Electrónico</label>
+                <input type="email" id="email" name="email" class="input-formulario" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="telefono" class="label-formulario">Número de Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" class="input-formulario" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="mensaje" class="label-formulario">Explique brevemente su caso</label>
+                <textarea id="mensaje" name="mensaje" class="textarea-formulario" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+        </form>
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ==================== -->
+<!-- FOOTER DINÁMICO -->
+<!-- ==================== -->
+<footer class="footer">
+    <div class="container-footer">
+        <!-- Logo y descripción -->
+        <div class="footer-columna">
+            <div class="footer-logo">
+                <i class="ri-scales-3-line"></i>
+                <span>Estudio Jurídico Vertel</span>
+            </div>
+            <p class="footer-descripcion">
+                Soluciones legales con excelencia y compromiso. Expertos en derecho civil, penal, laboral y de familia.
+            </p>
+        </div>
+
+        <!-- Enlaces rápidos -->
+        <div class="footer-columna">
+            <h4 class="footer-titulo">Enlaces Rápidos</h4>
+            <ul class="footer-links">
+                <li><a href="#inicio" class="footer-link">Inicio</a></li>
+                <li><a href="#quienes-somos" class="footer-link">Quiénes Somos</a></li>
+                <li><a href="#servicios" class="footer-link">Servicios</a></li>
+                <li><a href="#contacto" class="footer-link">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Servicios -->
+        <div class="footer-columna">
+            <h4 class="footer-titulo">Nuestros Servicios</h4>
+            <ul class="footer-links">
+                <li><a href="#servicios" class="footer-link">Derecho de Familia</a></li>
+                <li><a href="#servicios" class="footer-link">Derecho Penal</a></li>
+                <li><a href="#servicios" class="footer-link">Derecho Laboral</a></li>
+                <li><a href="#servicios" class="footer-link">Derecho Civil</a></li>
+            </ul>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="footer-columna">
+            <h4 class="footer-titulo">Síguenos</h4>
+            <div class="footer-social">
+                <a href="#" class="social-link facebook">
+                    <i class="ri-facebook-fill"></i>
+                </a>
+                <a href="#" class="social-link instagram">
+                    <i class="ri-instagram-line"></i>
+                </a>
+                <a href="#" class="social-link linkedin">
+                    <i class="ri-linkedin-fill"></i>
+                </a>
+                <a href="#" class="social-link whatsapp">
+                    <i class="ri-whatsapp-line"></i>
+                </a>
+            </div>
+            
+            <!-- Información de contacto -->
+            <div class="footer-contacto">
+                <p><i class="ri-phone-line"></i> +57 300 123 4567</p>
+                <p><i class="ri-mail-line"></i> info@estudiovertel.com</p>
+                <p><i class="ri-map-pin-line"></i> Bogotá, Colombia</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright">
+        <p>&copy; 2024 Estudio Jurídico Vertel. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+
+              
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
